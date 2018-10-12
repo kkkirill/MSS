@@ -1,0 +1,372 @@
+
+-----OPERATORS:-----
+
+$ - 444
+!!! - 0
+!= - 3
+?? !! - 0
+@! - 74
+@ - 91
+! - 77
+.& - 0
+%% - 0
+%= - 0
+% - 57
+&& - 7
+~& - 0
++& - 0
+& - 0
+**= - 0
+** - 0
+*= - 0
+.* - 0
+* - 2
+( - 256
+) - 256
+++ - 0
+<< - 0
+>> - 0
++< - 0
++> - 0
++^ - 0
++| - 0
+.+ - 0
++= - 0
++ - 7
+, - 126
+-- - 0
+-= - 0
+- - 16
+.:: - 0
+... - 0
+^..^ - 0
+..^ - 0
+.. - 0
+.: - 0
+.= - 0
+.? - 0
+.^ - 0
+// - 2
+/= - 0
+/ - 0
+::= - 0
+=:= - 9
+:= - 120
+:: - 132
+<== - 0
+<=> - 0
+<= - 1
+<> - 0
+: - 28
+=== - 0
+==> - 0
+== - 3
+=> - 0
+-> - 0
+=~= - 0
+>= - 0
+= - 10
+> - 24
+< - 18
+??? - 0
+?^ - 0
+?| - 0
+? - 21
+X - 0
+Z - 0
+[ - 18
+] - 18
+^.. - 0
+^^ - 0
+~^ - 0
+^ - 0
+{ - 159
+} - 159
+|| - 2
+| - 2
+~< - 0
+~> - 0
+~| - 0
+~~ - 0
+~ - 10
+. - 102
+if - 48
+else - 8
+while - 7
+method - 83
+my - 74
+die - 14
+unless - 10
+for - 35
+local - 16
+push - 27
+defined - 7
+unless - 0
+return - 12
+last - 2
+unshift - 0
+reverse - 7
+pos - 22
+eq - 5
+' - 46
+; - 250
+" - 34
+
+-----OPERANDS:-----
+
+ 0  - 40
+ 1  - 35
+ 11  - 1
+ 12  - 1
+ 2  - 1
+ 4  - 1
+ 5  - 1
+ Already  - 1
+ Archetypes  - 1
+ BUILD  - 3
+ BUILDALLPLAN  - 5
+ BUILDPLAN  - 6
+ Bool  - 1
+ C3  - 1
+ CAPHASH  - 1
+ CREATE  - 1
+ Calling  - 1
+ Can  - 3
+ Cannot  - 2
+ Class  - 1
+ Could  - 3
+ HOW  - 25
+ MATCH  - 1
+ NQPClassHOW  - 2
+ NQPMu  - 1
+ NYI  - 1
+ P6opaque  - 1
+ REPR  - 1
+ RoleToClassApplier  - 1
+ The  - 1
+ This  - 2
+ WHAT  - 2
+ _  - 47
+ _cache  - 4
+ _order  - 4
+ _table  - 7
+ a  - 9
+ accepted  - 4
+ add  - 1
+ add_  - 1
+ add_attribute  - 1
+ add_dispatchee  - 2
+ add_multi_  - 1
+ add_parent  - 3
+ add_role  - 2
+ added  - 1
+ adding  - 1
+ after  - 1
+ all  - 1
+ all_plan  - 2
+ already  - 3
+ also  - 1
+ ambiguous  - 1
+ an  - 3
+ and  - 1
+ anon  - 4
+ apply  - 1
+ archetypes  - 2
+ as  - 1
+ associative_delegate  - 2
+ at  - 1
+ atkey  - 1
+ attr  - 8
+ attr_info  - 7
+ attr_name  - 4
+ attribute  - 2
+ attributes  - 14
+ attrs  - 9
+ auto_viv_container  - 2
+ been  - 1
+ being  - 1
+ bool_meth  - 3
+ box_target  - 1
+ build  - 6
+ but  - 1
+ c3_merge  - 3
+ c_role  - 2
+ c_type  - 2
+ cache  - 4
+ cache_add  - 2
+ cache_get  - 1
+ caches  - 13
+ can  - 8
+ cand_class  - 3
+ cand_count  - 3
+ cand_list  - 3
+ candidate  - 1
+ cannot  - 1
+ check  - 5
+ class  - 16
+ clone  - 1
+ code  - 5
+ code_obj  - 7
+ com  - 12
+ compute_c3_mro  - 5
+ copy  - 3
+ create  - 1
+ create_BUILDPLAN  - 2
+ cur_  - 3
+ d  - 4
+ default  - 3
+ default_parent  - 3
+ depth  - 2
+ derive_dispatcher  - 1
+ dispatcher  - 10
+ does  - 2
+ done  - 7
+ e  - 3
+ e_repr  - 2
+ ed  - 6
+ elems  - 14
+ etype  - 1
+ exactly  - 1
+ exclude  - 2
+ exist  - 1
+ existskey  - 3
+ find  - 2
+ find_  - 2
+ flush_cache  - 2
+ found  - 10
+ from  - 1
+ generation  - 1
+ has  - 18
+ hash  - 2
+ have  - 2
+ hiding  - 1
+ hierarchy  - 1
+ i  - 19
+ ication_spec  - 3
+ immediate_parents  - 6
+ in  - 3
+ incorporate_multi_candidates  - 2
+ info  - 3
+ inherit  - 1
+ inheritable  - 1
+ ins  - 3
+ is  - 3
+ is_dispatcher  - 2
+ is_mixin  - 5
+ isa  - 1
+ isconcrete  - 1
+ ishash  - 3
+ isnull  - 6
+ it  - 2
+ iterkey_s  - 2
+ iterval  - 3
+ itional_delegate  - 1
+ itself  - 1
+ j  - 3
+ key  - 7
+ knowhow  - 1
+ linearization  - 1
+ list  - 9
+ make_tracer  - 3
+ may  - 1
+ merge_list  - 11
+ meta_attr  - 3
+ metaclass  - 2
+ meths  - 9
+ mixin  - 1
+ mixin_cache  - 6
+ mro  - 22
+ mro_  - 2
+ multi  - 3
+ multi_  - 6
+ name  - 54
+ named  - 4
+ ne  - 1
+ new  - 3
+ new_disp  - 2
+ new_list  - 2
+ new_name  - 2
+ new_parent  - 3
+ new_type  - 12
+ newtype  - 1
+ no  - 2
+ no_fallback  - 1
+ no_trace  - 2
+ nominal  - 1
+ not  - 4
+ nqp  - 104
+ null  - 4
+ num_todo  - 2
+ obj  - 78
+ off  - 1
+ on  - 1
+ one  - 1
+ only  - 5
+ orig  - 1
+ orig_cache  - 3
+ out  - 2
+ parent  - 13
+ parents  - 11
+ parts  - 3
+ plan  - 3
+ proto  - 2
+ publish_  - 4
+ publish_bool  - 3
+ publish_type_cache  - 3
+ re  - 3
+ rebless  - 1
+ rejected  - 2
+ reparent  - 1
+ repr  - 3
+ repr_info  - 3
+ result  - 9
+ role  - 8
+ role_typecheck_list  - 2
+ roles  - 6
+ s  - 8
+ s_to_incorporate  - 5
+ say  - 1
+ scwbdisable  - 3
+ scwbenable  - 3
+ self  - 21
+ set_default_parent  - 1
+ set_is_mixin  - 1
+ setboolspec  - 1
+ setdebugtypename  - 1
+ setmethcache  - 2
+ setmethcacheauth  - 3
+ settypecache  - 1
+ setwho  - 1
+ shortname  - 1
+ should_trace  - 3
+ sigil  - 2
+ sigop  - 1
+ so  - 1
+ something_accepted  - 2
+ specialize  - 1
+ specialized_roles  - 2
+ split  - 1
+ sub  - 3
+ substr  - 1
+ support  - 1
+ t  - 3
+ tc  - 2
+ the  - 1
+ to  - 2
+ todo  - 2
+ trace  - 6
+ trace_cache  - 2
+ trace_depth  - 7
+ trace_exclude  - 3
+ traced  - 1
+ type  - 1
+ type_info  - 4
+ type_obj  - 3
+ unsh  - 2
+ value  - 2
+ value_generator  - 1
+ when  - 1
+ where  - 1
+ whose  - 1
+ with  - 1
+ x  - 1

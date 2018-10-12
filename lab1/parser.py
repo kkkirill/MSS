@@ -14,15 +14,14 @@ if(len(sys.argv) == 4):
                 text = ' '.join(text.replace(operators[index], " ").split())
 
             print("\n-----OPERANDS:-----\n", file=output)
-            operands = list(set(text.split()))
+            operands = sorted(list(set(text.split())))
             text = " " + text + " "
 
             for operand in range(len(operands)):
                 operands[operand] = " " + operands[operand] + " "
                 print(operands[operand] + " - " + str(text.count(operands[operand])), file=output)
-                text = text.replace(operands[operand], ' ')
 
-                while (text.count(operands[operand]) != 0):
+                while (text.count(operands[operand]) != 0) :
                     text = text.replace(operands[operand], ' ')
         output.close()
     else:
