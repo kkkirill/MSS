@@ -1,6 +1,6 @@
 # CL - total number of 'if'
 # cl - (total number of operators)/CL
-# CLI - max number of attachments
+# CLI - max number of depth
 
 import re
 
@@ -49,11 +49,6 @@ f = open('code.txt', 'r')
 # print(CLI)
 #####################3
 
-text2 = f.read()
-
-
-
-
 text = f.read()  # code (str)
 f1 = open('roperators.txt', 'r')
 ops = f.readlines()  # operators (list)
@@ -66,75 +61,67 @@ operators = len(sth)
 
 
 #print('switch (a) { case 1 {}\\ncase 2{}\\ncase 3 {}\\nelse {}}has $!name;method archetypes() {$archetypes};method add_method($obj, $name, $code_obj) { if')
-pattern = re.compile(r"\s((if|elsif)[^{]*|case \d|unless|else)\s{*")
-# conditions with symbols in conditions !!!!!
-
-# buf = 0
-# for i in range(10):
-#     temp = re.search(pattern, text2[buf:])
-#     buf = buf + temp.end()
-#     print(temp)
-
-#mas = re.finditer(pattern, text2)
-# for elem in pattern.finditer(text2):
-#     print(elem.start(), elem.end(), elem.group(1))
-#     i1 = text2.count('{', elem.end(), 1720)
-#     i2 = text2.count('}', 34, 1720)
-#     print(i1, i2)
-#     if i1 - i2 % 2 != 0:
-#         print('OK')
-#     else:
-#         print('NOT OK')
-# print(text2[34]
+pattern = re.compile(r"(\s((?:if|elsif|while|for|until)[^{^\n;]*(?:;|{|)*)|((?:case \d|unless|else)\s*[{]*))")
 
 
+foundlist = [[m.start(), m.end(), m.group(1)] for m in re.finditer(pattern, text)]
+print(foundlist)
+depth = []
+amount_of_attachments = 0   # depth
+temp_num_of_brackets = 0  # if brackets
+temp_num_of_all_brackets = text[:foundlist[0][1]].count('{') - text[:foundlist[0][1]].count('}')  # all brackets
+listing = [temp_num_of_all_brackets]
+for i in range(len(foundlist) - 1):
+    num_of_open_brackets, num_of_close_brackets = text[foundlist[i][1]:foundlist[i+1][0]].count('{'), text[foundlist[i][1]:foundlist[i+1][0]].count('}')
+    amount_of_brackets = num_of_open_brackets + num_of_close_brackets
+    #print(text[foundlist[i][1]:foundlist[i+1][0]].count('}'))
 
-# for x in range(10):
-#     i2 = i1 + i2.end()
-#     i1 = i2 + re.search(pattern, text2[i2:]).end()
-#     i2 = re.search(pattern, text2[i1:])
-#     #print(text2[i1:i1 + i2.start()])
-#     print(i1, i1 + i2.end(), text2[i1:i1 + i2.start()], len(text2[i1:i1 + i2.start()]))
-#     amount = len(re.findall(r"[{}]", text2[i1:i1 + i2.start()]))
-#     if amount == 0:
-#         depth += 1
-#     elif amount % 2 == 0 and text2[i1:i1 + i2.start()].count('{') < text2[i1:i1 + i2.start()].count('}'):
-#         depth += 1
-#     elif amount % 2 != 0:
-#         if len(re.findall(r"[{}]", text2[text2[i1:i1 + i2.start()].rfind('}'):i1 + i2.start()])) == 0:
-#             depth += 1
-#     print('----------------------------------------------')
+    if foundlist[i][2].find('{') != -1:
+        temp_num_of_brackets += 1
+    listing.append(num_of_open_brackets + 1 if foundlist[i][2].find('{') != -1 else 0)
+    temp = len(listing) - 1
+    while listing[temp] < 0:
+        listing[temp] -= num_of_close_brackets
+        if listing[temp] < 0:
+            temp -= 1
+            listing[temp] = listing[temp] + listing[temp + 1]
+            listing.pop()
+        elif listing[temp] == 0:
+            listing.pop()
+
+    if (amount_of_brackets % 2 != 0 or amount_of_brackets == 0) and (num_of_close_brackets < num_of_open_brackets + 1):
+        amount_of_attachments += 1
+    # elif text[foundlist[i][1]:(text[foundlist[i][1]:foundlist[i+1][0]].find('}'))].count('{') == 0:
+    #     if text[foundlist[i][1]:(text[foundlist[i][1]:foundlist[i+1][0]].find('}'))].count('}') == temp_num_of_brackets:
+    #         depth.append(amount_of_attachments)
+    #         temp_num_of_brackets = 0
+    #         amount_of_attachments = 0
+
+print()
+print(depth)
+# depth = 0
+# i1, i2 = 0, re.search('', text)
 #
-# print(depth)
+# amount_of_iters = len(re.findall(pattern, text))
+# nestlist = []
+#
+# for x in range(100):
+#     i2 = i1 + i2.start()  # change i2 because it counting in slice and i2 not true value (old i2, i. e. from last iter)
+#     i1 = i2 + re.search(pattern, text[i2:]).end()  # same as 1 up
+#     i2 = re.search(pattern, text[i1:])  # count new i2
+#     if i2 is None:
+#         break
+#     print(i1, i1 + i2.end(), text[i1:i1 + i2.start()], len(text[i1:i1 + i2.start()]))
+#     amount = len(re.findall(r"[{}]", text[i1:i1 + i2.start()]))
+#     if (amount == 0 or amount % 2 == 0) and abs(text[i1:i1 + i2.start()].count('}') - text[i1:i1 + i2.start()].count('{')) < 2:
+#         depth += 1
+#     elif text[i1:i1 + i2.start()].count('}') > text[i1:i1 + i2.start()].count('{'):
+#         #depth += 1
+#         nestlist.append(depth)
+#         depth = 0
 
-depth = 0
-i1, i2 = 0, re.search('', text2)
-
-amount_of_iters = len(re.findall(pattern, text2))
-nestlist = []
-
-for x in range(100):
-    i2 = i1 + i2.start()  # change i2 because it counting in slice and i2 not true value (old i2, i. e. from last iter)
-    i1 = i2 + re.search(pattern, text2[i2:]).end()  # same as 1 up
-    i2 = re.search(pattern, text2[i1:])  # count new i2
-    if i2 is None:
-        break
-    print(i1, i1 + i2.end(), text2[i1:i1 + i2.start()], len(text2[i1:i1 + i2.start()]))
-    amount = len(re.findall(r"[{}]", text2[i1:i1 + i2.start()]))
-    if (amount == 0 or amount % 2 == 0) and abs(text2[i1:i1 + i2.start()].count('}') - text2[i1:i1 + i2.start()].count('{')) < 2:
-        depth += 1
-    elif text2[i1:i1 + i2.start()].count('}') > text2[i1:i1 + i2.start()].count('{'):
-        #depth += 1
-        nestlist.append(depth)
-        depth = 0
-
-print(nestlist)
-print(max(nestlist))
-
-# i2 = 0
-# while i2 != -1:
-#     i1 = text2.find(' if ', i2) # regex find
-#     i2 = text2.find(' if ', i1+1)
+# print(nestlist)
+# print(max(nestlist))
 
 
 
