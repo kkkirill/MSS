@@ -1,0 +1,14 @@
+method test {
+    if condition 1 {
+        unless condition 2 {
+            while condition 3 {
+                for (i = 0; condition 4; i++) {
+                    do {
+                        if condition 5 {
+                        }
+                    } while(condition 7);
+                }
+            }
+        }
+    }
+}
